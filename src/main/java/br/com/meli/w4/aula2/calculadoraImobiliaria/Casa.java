@@ -19,10 +19,6 @@ public class Casa {
         this.comodos = comodos;
     }
 
-    public List<Comodo> getComodos() {
-        return new ArrayList<Comodo>(comodos);
-    }
-
     public Double getArea() {
         return comodos.stream()
                 .map(comodo -> comodo.getComprimento() * comodo.getLargura())
@@ -35,5 +31,9 @@ public class Casa {
 
     public Comodo getMaiorComodo() {
         return comodos.stream().max(Comparator.comparing(comodo -> comodo.getArea())).get();
+    }
+
+    public List<Comodo> getComodos() {
+        return new ArrayList<Comodo>(comodos);
     }
 }
