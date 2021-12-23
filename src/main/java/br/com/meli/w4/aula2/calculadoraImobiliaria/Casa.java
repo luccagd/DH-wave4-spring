@@ -21,7 +21,7 @@ public class Casa {
 
     public Double getArea() {
         return comodos.stream()
-                .map(comodo -> comodo.getComprimento() * comodo.getLargura())
+                .map(comodo -> comodo.getArea())
                 .reduce(0.0, (subtotal, area) -> subtotal + area);
     }
 
